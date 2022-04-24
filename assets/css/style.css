@@ -64,6 +64,39 @@
   border-radius: 100px;
 }
 
+input, textarea{
+  background-color:#666;
+  color: #FFF;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #FFF;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #FFF;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #FFF;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #FFF;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #FFF;
+}
+
+.form-group label, text, textarea p{
+  color: #fff!important;
+}
+
 body {
   background-image: url('../img/body_bg.jpg');
   background-size: cover;
@@ -329,7 +362,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  font-size: 24px;
+  font-size: 16px;
   color: var(--white);
   white-space: nowrap;
   transition: 0.3s;
@@ -530,16 +563,31 @@ h6 {
 }
 
 @media (max-width: 768px) {
-  #hero h1, #hero_readmore h1 {
-    font-size: 26px;
-    line-height: 1.2;
+  #hero h1 {
+    font-size: 60px;
+    line-height: 1;
   }
+
+  #hero p {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
 
   #hero video {
     position: initial;
     width: 100%;
     transform: translate(0%, 0%);
     margin-bottom: 48px;
+  }
+
+  #hero .btn-primary {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
 }
@@ -629,6 +677,22 @@ section {
   line-height: 1;
   color: var(--white);
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+
+  .box {
+    padding: 32px;
+  }
+
+  .box h2 {
+    font-size: 40px;
+  }
+
+  .box p {
+    font-size: 32px;
+  }
+
 }
 
 /*--------------------------------------------------------------
@@ -927,7 +991,7 @@ section {
 #footer .php-email-form .sent-message {
   display: none;
   color: var(--white);
-  background: #18d26e;
+  background: var(--green);
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -947,7 +1011,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  border: 3px solid var(--green);
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -958,8 +1022,9 @@ section {
   border-radius: 8px;
   box-shadow: none;
   font-size: 14px;
-  border: 1px solid var(--green);
+  border: 1px solid var(--white);
   background-color: transparent;
+  color: var(--white) !important;
 }
 
 #footer .php-email-form input:focus,
@@ -973,7 +1038,7 @@ section {
 }
 
 #footer .php-email-form .form-control {
-  background-color: var(--dark) !important;
+  background-color: transparent !important;
   color: var(--white) !important;
 }
 
@@ -1013,13 +1078,8 @@ section {
 }
 
 @media only screen and (max-width: 768px) {
-  #footer .info-box p {
-    display: none;
-    visibility: hidden;
-  }
 
   #footer .info-box {
-    display: block;
     text-align: center;
     padding: 16px;
     border-radius: 50px;
