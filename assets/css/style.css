@@ -1,35 +1,23 @@
 @font-face {
   font-family: 'Poppins';
-  src: url('../fonts/Poppins-Bold.eot');
-  src: url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Poppins-Bold.woff2') format('woff2'),
-    url('../fonts/Poppins-Bold.woff') format('woff'),
-    url('../fonts/Poppins-Bold.ttf') format('truetype');
-  font-weight: bold;
+  src: url('../fonts/Poppins-Regular.eot');
+  src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Poppins-Regular.woff2') format('woff2'),
+      url('../fonts/Poppins-Regular.woff') format('woff'),
+      url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('../fonts/Poppins-SemiBold.eot');
-  src: url('../fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
-    url('../fonts/Poppins-SemiBold.woff') format('woff'),
-    url('../fonts/Poppins-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('../fonts/SFProDisplay-Regular.eot');
-  src: url('../fonts/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
-    url('../fonts/SFProDisplay-Regular.woff') format('woff'),
-    url('../fonts/SFProDisplay-Regular.ttf') format('truetype');
-  font-weight: normal;
+  src: url('../fonts/Poppins-ExtraBold.eot');
+  src: url('../fonts/Poppins-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Poppins-ExtraBold.woff2') format('woff2'),
+      url('../fonts/Poppins-ExtraBold.woff') format('woff'),
+      url('../fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -45,8 +33,7 @@
   --pink: #cf3dc4;
   --orange: #ef9326;
   --green: #01bfbf;
-  --font-title: 'Poppins';
-  --font-text: 'SF Pro Display';
+  --font: 'Poppins';
   scroll-behavior: smooth;
 }
 
@@ -102,7 +89,7 @@ body {
   background-size: cover;
   background-position: top center;
   font-family: 'Poppins';
-  font-weight: 600;
+  font-weight: normal;
   color: var(--white);
   text-rendering: optimizeLegibility;
 }
@@ -128,15 +115,23 @@ h6 {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-weight: bold;
 }
 
+h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: normal;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-normal {
+  font-weight: normal;
 }
 
 .orange {
@@ -151,14 +146,14 @@ h6 {
   color: var(--pink);
 }
 
-.btn-primary, .btn-primary-outline {
+.btn-primary, .btn-primary-orange, .btn-primary-outline {
   background: transparent;
   border-radius: 12px;
   color: var(--white);
   cursor: pointer;
   display: inline-block;
-  font-family: var(--font-text);
-  font: normal normal 16px/24px SF Pro Display;
+  font-family: var(--font);
+  font: normal normal 16px/24px Poppins;
   letter-spacing: 1.6px;
   outline: none;
   padding: 12px 32px;
@@ -168,7 +163,7 @@ h6 {
   transition: all 0.3s ease;
 }
 
-.btn-primary:hover{
+.btn-primary:hover, .btn-primary-orange:hover{
   background-color: var(--pink);
 }
 
@@ -182,13 +177,19 @@ h6 {
   z-index: 1;
 }
 
+.btn-animated-orange {
+  background: var(--orange);
+  border: none;
+  z-index: 1;
+}
+
 .btn-animated-outline {
   background: transparent;
   border: 1px solid var(--green);
   z-index: 1;
 }
 
-.btn-animated:after, .btn-animated-outline:after {
+.btn-animated:after, .btn-animated-outline:after, .btn-animated-orange:after {
   background-color: var(--green);
   border-radius: 12px;
   content: "";
@@ -201,16 +202,16 @@ h6 {
   z-index: -1;
 }
 
-.btn-animated:hover, .btn-animated-outline:hover {
+.btn-animated:hover, .btn-animated-outline:hover, .btn-animated-orange:hover {
   color: var(--white);
 }
 
-.btn-animated:hover:after, .btn-animated-outline:hover:after {
+.btn-animated:hover:after, .btn-animated-outline:hover:after, .btn-animated-orange:hover:after {
   left: 0;
   width: 100%;
 }
 
-.btn-animated:active, .btn-animated-outline:active {
+.btn-animated:active, .btn-animated-outline:active, .btn-animated-orange:active {
   top: 2px;
 }
 
@@ -531,11 +532,11 @@ h6 {
 }
 
 #hero p {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1;
   color: var(--white);
-  font-weight: 600;
-  margin-bottom: 3rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 1920px) {
@@ -650,7 +651,7 @@ section {
 }
 
 .about .features .icon-box p {
-  font-family: var(--font-text);
+  font-family: var(--font);
   font-size: 14px;
   line-height: 1;
   margin: 0;
@@ -802,7 +803,7 @@ section {
   display: block;
   position: relative;
   color: var(--white);
-  font-family: var(--font-title);
+  font-family: var(--font);
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -863,7 +864,7 @@ section {
 
 .section-holos h2 {
   font-size: 57px;
-  font-family: var(--font-title);
+  font-family: var(--font);
   text-transform: uppercase;
   color: var(--white);
   line-height: 1;
@@ -871,7 +872,7 @@ section {
 
 .section-holos h3 {
   font-size: 40px;
-  font-family: var(--font-title);
+  font-family: var(--font);
   font-weight: 600;
   color: var(--white);
   line-height: 1;
@@ -919,7 +920,7 @@ section {
 
 #footer .link a {
   color: var(--white);
-  font-family: var(--font-title);
+  font-family: var(--font);
   font-size: 16px;
   font-weight: 600;
 }
@@ -952,7 +953,7 @@ section {
 }
 
 #footer .info-box p {
-  font-family: var(--font-title);
+  font-family: var(--font);
   font-weight: 600;
   padding: 0;
   line-height: 0;
