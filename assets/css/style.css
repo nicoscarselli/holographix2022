@@ -88,6 +88,7 @@ body {
   background-image: url('../img/body_bg.jpg');
   background-size: cover;
   background-position: top center;
+  background-color: #000000;
   font-family: 'Poppins';
   font-weight: normal;
   color: var(--white);
@@ -221,6 +222,12 @@ h6 {
   width: 100%;
 }
 
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+.inner-page {
+  margin-top: 12rem;
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -670,14 +677,14 @@ section {
 }
 
 .box h2 {
-  font-size: 70px;
+  font-size: 60px;
 }
 
 .box p {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1;
   color: var(--white);
-  font-weight: 600;
+  font-weight: normal;
 }
 
 @media (max-width: 768px) {
